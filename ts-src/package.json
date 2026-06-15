@@ -1,0 +1,19 @@
+{
+  "name": "acquisition-engine-ts",
+  "version": "0.1.0",
+  "description": "TypeScript orchestration layer for the Python acquisition engine.",
+  "scripts": {
+    "start": "ts-node index.ts",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "axios": "^1.7.0",
+    "commander": "^12.0.0",
+    "dotenv": "^16.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.12.0"
+  }
+}

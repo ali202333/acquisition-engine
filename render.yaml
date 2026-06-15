@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: acquisition-engine
+    runtime: python
+    plan: standard
+    buildCommand: |
+      pip install -r requirements.txt
+      playwright install chromium
+    startCommand: python -m src.main run --region "$TARGET_REGION" --keywords cafe restaurant lounge
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: GOOGLE_MAPS_API_KEY
+        sync: false
+      - key: TARGET_REGION
+        value: Cyberjaya
+      - key: TARGET_COUNTRY
+        value: Malaysia
+      - key: LLM_MODEL
+        value: gpt-4o-mini
+      - key: TEMPERATURE
+        value: "0.2"
+      - key: PYTHON_VERSION
+        value: "3.11"
+    autoDeploy: false
+    healthCheckPath: /
